@@ -1,4 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* You can add global styles to this file, and also import other style files */
+
+body {
+  @apply bg-background text-foreground;
+}
+
+.e-de-ctn {
+  @apply bg-background !important;
+}
+
+.e-toolbar {
+  @apply bg-editor-toolbar border-b border-gray-300 !important;
+}
+
+.e-de-content {
+  @apply bg-editor-background !important;
+}
+
+.e-de-content-wrapper {
+  @apply bg-editor-background !important;
+}
+
+.e-de-editor {
+  @apply bg-editor-background !important;
+}
+
+.e-de-editor-container {
+  @apply bg-editor-background !important;
+}
+
+.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn {
+  @apply text-gray-700 !important;
+}
+
+.e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn:hover {
+  @apply bg-gray-200 !important;
+}
+
+.e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn {
+  @apply text-gray-700 !important;
+}
+
+.e-toolbar .e-toolbar-items .e-toolbar-item.e-separator {
+  @apply border-gray-300 !important;
+}
