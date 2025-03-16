@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   NotFoundException,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { DocumentsService } from './documents.service';
 import { CreateDocumentDto } from './dto/create-document.dto';
@@ -27,44 +28,20 @@ export class DocumentsController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
-    const documentId = parseInt(id, 10);
-
-    if (isNaN(documentId)) {
-      throw new NotFoundException('Invalid document ID format');
-    }
-
-    const document = await this.documentsService.findOne(documentId);
-
-    if (!document) {
-      throw new NotFoundException('Invalid document');
-    }
-
-    return document;
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.documentsService.findOne(id);
   }
 
   @Put(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() updateDocumentDto: UpdateDocumentDto
   ) {
-    const documentId = parseInt(id, 10);
-
-    if (isNaN(documentId)) {
-      throw new NotFoundException('Invalid document ID format');
-    }
-
-    return this.documentsService.update(documentId, updateDocumentDto);
+    return this.documentsService.update(id, updateDocumentDto);
   }
 
   @Delete(':id')
-  delete(@Param('id') id: string) {
-    const documentId = parseInt(id, 10);
-
-    if (isNaN(documentId)) {
-      throw new NotFoundException('Invalid document ID format');
-    }
-
-    return this.documentsService.delete(documentId);
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.documentsService.delete(id);
   }
 }
