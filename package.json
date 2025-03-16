@@ -7,13 +7,21 @@
   "dependencies": {
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
+    "@nestjs/mapped-types": "^2.1.0",
     "@nestjs/platform-express": "^10.0.2",
+    "@nestjs/typeorm": "^11.0.0",
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@syncfusion/ej2-base": "^28.2.9",
     "@syncfusion/ej2-react-documenteditor": "^28.2.11",
-    "axios": "^1.6.0",
+    "classnames": "^2.5.1",
+    "lodash.debounce": "^4.0.8",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.21"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -35,6 +43,7 @@
     "@swc/helpers": "~0.5.11",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.1.0",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "18.16.9",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
