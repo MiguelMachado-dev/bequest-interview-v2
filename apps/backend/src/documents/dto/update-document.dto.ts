@@ -1,6 +1,4 @@
-export class UpdateDocumentDto {
-  id: number;
-  name: string;
-  content: string;
-  clauses: string;
-}
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateDocumentDto } from './create-document.dto';
+
+export class UpdateDocumentDto extends PartialType(CreateDocumentDto) {}
